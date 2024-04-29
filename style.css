@@ -1,0 +1,55 @@
+html{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.attackColor{
+    color:red;
+}
+
+.weaknessInflictColor{
+    color:brown;
+}
+
+.card{
+    width: 297px;
+    height: 421px;
+    padding: 16px;
+    border-radius: 16px;
+    border: solid  black  2px;
+    background-color: #D5E1F8;
+    background-image: url('content/images/paperTexture.jpg');
+    background-color: #f8d5d5;
+    background-blend-mode: multiply;
+}
+
+.cardCost{
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 24px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    margin: 0;
+    border: solid black 2px;
+    background-color: rgb(214, 214, 214);
+}
+
+.cardCost p{
+    font-size: 20px;
+}
+
+.card h1{
+    font-size: 24px;
+    text-align: center;
+    margin-top: 0;
+}
+
+.card img{
+    width: 100%;
+    border-radius: 8px;
+}
+
+.card div p span{
+    font-weight: 600;
+}
