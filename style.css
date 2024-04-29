@@ -57,12 +57,13 @@ html{
 }
 
 .cardNamesList {
+    margin-top: 8px;
     flex-direction: row;
 }
 
-.cardsNamesList button{
+.cardNamesList button{
     padding: 16px;
     background-color: transparent;
     border-radius: 8px;
-    gap: 16px;
+    margin: 8px;
 }
