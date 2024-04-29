@@ -6,8 +6,12 @@ function typeColor(cardType){
         case 'Defense':
             return '#D5E1F8'
 
-        case 'Healing':
-            return 'green'
+        case 'HealingT1':
+            return '#D5FFD7'
+        
+        case 'HealingT2':
+            return '#93F99D'
+
         default:
             return 'white'
     }
@@ -29,7 +33,7 @@ function getContent(selectedCard) {
         }
 
         if (selectedCard.heal > 0) {
-            contentHTML += `<p>La carte restaure <span class="shieldColor" >${selectedCard.shield} points de vie</span></p>`;
+            contentHTML += `<p>La carte restaure <span class="healColor" >${selectedCard.heal} points de vie</span></p>`;
         }
 
         return contentHTML;
