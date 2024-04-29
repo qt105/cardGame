@@ -10,15 +10,17 @@ html{
     color:brown;
 }
 
+.shieldColor{
+    color:
+}
+
 .card{
     width: 297px;
     height: 421px;
     padding: 16px;
     border-radius: 16px;
     border: solid  black  2px;
-    background-color: #D5E1F8;
     background-image: url('content/images/paperTexture.jpg');
-    background-color: #f8d5d5;
     background-blend-mode: multiply;
 }
 

@@ -7,24 +7,74 @@
     <title>Document</title>
 </head>
 <body>
+
+    <div class="card" id="card-type">
+        <div id="card-cost" class="cardCost"><p>cst</p></div>
+        <h1 id="card-name">Card Name</h1>
+        <img id="card-image" src="" alt="Card Image">
+        <div id="card-content">
+        </div>
+    </div>
+
     <script>
         let crocFéroce = {
             name:'Croc Féroce',
+            type:'Attack',
             image:'content/images/crocFeroce.jpeg',
             cost: 2,
             damage: 3,
             weaken: 1,
+            shield: 0,
         }
+        
+        let nameTag = document.getElementById('card-name');     //Card name, image and cost
+        let imageTag = document.getElementById('card-image');
+        let costTag = document.getElementById('card-cost');
+        let cardTypeTag = document.getElementById('card-type');
+        nameTag.innerText = crocFéroce.name;
+        imageTag.src = crocFéroce.image;
+        costTag.innerText = crocFéroce.cost;
+
+        switch (crocFéroce.type) {
+            case 'Attack':
+                cardColor = '#f8d5d5'
+                break
+            
+            case 'Defense':
+                cardColor = '#D5E1F8'
+                break
+
+            case 'Spell':
+                cardColor = 'green'
+                break
+            default:
+                cardColor = 'white'
+                break
+        }
+
+
+        cardTypeTag.style.backgroundColor = cardColor
+
+        let contentTag = document.getElementById('card-content') //Dynamic card content
+        let contentHTML = '';
+
+        if (crocFéroce.damage > 0) {
+            contentHTML += `<p>Attaque et inflige <span class="attackColor">${crocFéroce.damage} points de dégâts physiques</span></p>`;
+        }
+
+        if (crocFéroce.weaken > 0) {
+            contentHTML += `<p>L'attaque octroie <span class="weaknessInflictColor">${crocFéroce.weaken} point de faiblesse à l'adversaire</span></p>`;
+        }
+
+        if (crocFéroce.shield > 0) {
+            contentHTML += `<p>${crocFéroce.type} offre <span class="shieldColor" >${crocFéroce.shield} points de bouclier</span></p>`;
+        }
+
+        contentTag.innerHTML = contentHTML;
+
+
     </script>
 
-    <div class="card">
-        <div class="cardCost"><p>2</p></div>
-        <h1>Croc Féroce</h1>
-        <img src="content/images/crocFeroce.jpeg" alt="Croc féroce">
-        <div>
-            <p>Une Attaque féroce infligeant <span class="attackColor">3 points de dégâts physiques</span></p>
-            <p>L'attaque octroie <span class="weaknessInflictColor">1 point de faiblesse à l'adversaire</span></p>
-        </div>
-    </div>
+
 </body>
 </html>
