@@ -11,7 +11,7 @@ html{
 }
 
 .shieldColor{
-    color:
+    color: blue;
 }
 
 .card{
@@ -54,4 +54,15 @@ html{
 
 .card div p span{
     font-weight: 600;
+}
+
+.cardNamesList {
+    flex-direction: row;
+}
+
+.cardsNamesList button{
+    padding: 16px;
+    background-color: transparent;
+    border-radius: 8px;
+    gap: 16px;
 }
