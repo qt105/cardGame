@@ -25,7 +25,7 @@
         <div id="enemyDiv">
             <img src="assets/enemysprite.png" alt="" id="enemySprite">
             <p>Points de vie : </p>
-            <p id="enemyHealth">20 / 20</p>
+            <p id="enemyHealth">50 / 50</p>
         </div>
     </div>
     <div id="energyPoints">
@@ -38,13 +38,20 @@
     </div>
     <div id="player-hand"></div>
 
+    <div id="gameOverScreen" class="hiddenDefeat">
+        <h1>Game Over</h1>
+        <p>Vous avez été vaincu</p>
+        <a href=".">Recommencer</a>
+    </div>
+
+    <div id="victoryScreen" class="hiddenVictory">
+        <h1>Vous avez Gagné</h1>
+        <p>Félicitations, l'adversaire a été vaincu</p>
+        <a href=".">Recommencer</a>
+    </div>
+
     <script src="cardList.js">//Inclusion des cartes du jeu </script>
     <script src="scripts.js">//Inclusion des scripts </script>
-
-    <script>
-
-    let playerHand = document.getElementById('player-hand');
-</script>
 </body>
 </html>
 

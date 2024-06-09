@@ -1,7 +1,7 @@
 let playerTurn = true
 let playerMaxHP = 20
 let playerHealth = 20
-let enemyHealth = 20
+let enemyHealth = 50
 let mana = 5
 
 function cloneTemplate(id) {
@@ -21,13 +21,12 @@ function addNewCardToHand(card) {
     let newCard = createNewCard(card);
     let cardElement = newCard.querySelector('.card');
     cardElement.addEventListener('click', () => {
-        onCardClick(card, cardElement); // Pass the card data and card element to the click handler
+        onCardClick(card, cardElement);
     });
     document.getElementById('player-hand').appendChild(newCard);
 }
 function onCardClick(card, cardElement) {
     console.log(`Carte cliquée: ${card.title}`);
-    // Add your logic here for what happens when a card is clicked
     if (playerTurn & mana > card.cost) {
         deductPlayerMana(card.cost)
         console.log(mana)
@@ -40,7 +39,6 @@ function onCardClick(card, cardElement) {
             playerHealth = playerMaxHP
             updatePlayerHealthDisplay()
         }
-
     }
 }
 
@@ -49,22 +47,25 @@ function switchTurns() {
     if (playerTurn) {
         resetPlayerMana()
         console.log("C'est le tour du joueur.");
-        document.getElementById('endTurnCTA').style.display = 'block'; // Show end turn button
+        document.getElementById('endTurnCTA').style.display = 'block';
         addRandomCardToHand(cardList)
     } else {
         console.log("C'est le tour de l'ennemi.");
-        document.getElementById('endTurnCTA').style.display = 'none'; // Hide end turn button
+        document.getElementById('endTurnCTA').style.display = 'none';
         enemyTurn();
     }
 }
 
 function enemyTurn() {
     setTimeout(() => {
-        deductPlayerHP(3)
+        deductPlayerHP(5)
         console.log(playerHealth);
         console.log("L'ennemi a joué son tour.");
-        switchTurns(); // Switch back to the player's turn after enemy actions are complete
-    }, 1000); // Simulate some delay for enemy actions
+        switchTurns();
+        if (playerHealth <= 0){
+            showGameOverScreen()
+        }
+    }, 1000);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -76,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
         switchTurns();
     });
     
-    // Initialize the turn system
     switchTurns();
 });
 
@@ -98,12 +98,15 @@ function deductPlayerHP(amount) {
 }
 
 function updateEnemyHealthDisplay() {
-    document.getElementById('enemyHealth').innerText = `${enemyHealth} / 20`;
+    document.getElementById('enemyHealth').innerText = `${enemyHealth} / 50`;
 }
 
 function deductEnemyHP(amount) {
     enemyHealth -= amount;
     updateEnemyHealthDisplay();
+    if (enemyHealth <= 0) {
+        showVictoryScreen();
+    }
 }
 
 function updatePlayerManaDisplay() {
@@ -118,4 +121,12 @@ function deductPlayerMana(amount) {
 function resetPlayerMana() {
     mana = 5;
     updatePlayerManaDisplay();
+}
+
+function showGameOverScreen() {
+    document.getElementById('gameOverScreen').classList.remove('hiddenDefeat');
+}
+
+function showVictoryScreen() {
+    document.getElementById('victoryScreen').classList.remove('hiddenVictory');
 }
