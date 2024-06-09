@@ -1,42 +1,41 @@
-let cards = [
-    {
-        name:'Croc Féroce',
-        type:'Attack',
-        image:'content/images/crocFeroce.jpeg',
+    let croc = {
+        title: 'Croc féroce',
         cost: 2,
-        damage: 3,
-        weaken: 1,
+        illustration: 'crocFeroce.jpeg',
+        description: 'Inflige 12 points de dégâts',
+        dmg: 12,
         shield: 0,
         heal: 0
-    },
-    {
-        name:'Bouclier basique',
-        type:'Defense',
-        image:'content/images/bouclier.jpeg',
-        cost: 3,
-        damage: 0,
-        weaken: 0,
-        shield: 5,
-        heal: 0
-    },
-    {
-        name:'Potion de soin',
-        type:'HealingT1',
-        image:'content/images/potion.jpeg',
-        cost: 1,
-        damage: 0,
-        weaken: 0,
-        shield: 0,
-        heal: 3
-    },
-    {
-        name:'Elixir de soin',
-        type:'HealingT2',
-        image:'content/images/elixir.jpeg',
-        cost: 3,
-        damage: 0,
-        weaken: 0,
-        shield: 0,
-        heal: 8
     }
-    ]
+
+    let bouclier = {
+        title: 'Bouclier basique',
+        cost: 1,
+        illustration: 'bouclier.jpeg',
+        description: 'Donne 6 points de vie supplémentaires',
+        dmg: 0,
+        shield: 6,
+        heal: 0
+    }
+
+    let potionSoin = {
+        title: 'Potion de soin',
+        cost: 2,
+        illustration: 'potion.jpeg',
+        description: 'Restaure 10 points de vie',
+        dmg: 0,
+        shield: 0,
+        heal: 10
+    }
+
+    let Elixir = {
+        title: 'Elixir de soin',
+        cost: 4,
+        illustration: 'elixir.jpeg',
+        description: 'restaure 20 points de vie',
+        dmg: 0,
+        shield: 0,
+        heal: 20
+    }
+
+    const cardList = [croc, bouclier, potionSoin, Elixir]

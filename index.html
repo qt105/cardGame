@@ -4,56 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="">
     <title>Document</title>
 </head>
 <body>
+    <template class="card-template" id="card-template">
+        <div class="card">
+            <span class="card-title">Titre de la carte</span>
+            <span class="card-cost">Cout de la carte</span>
+            <img src="assets/cardImages/crocFeroce.jpeg" alt="image" class="card-illustration">
+            <p class="card-description">Description de la carte</p>
+        </div>
+    </template>
 
-    <div class="card" id="card-type">
-        <div id="card-cost" class="cardCost"><p>cst</p></div>
-        <h1 id="card-name">Card Name</h1>
-        <img id="card-image" src="" alt="Card Image">
-        <div id="card-content">
+    <div id="display">
+        <div id="playerDiv">
+            <img src="assets/cardImages/crocFeroce.jpeg" alt="" id="playerSprite">
+            <p>Points de vie : </p>
+            <p id="playerHealth">20 / 20</p>
+        </div>
+        <div id="enemyDiv">
+            <img src="assets/cardImages/crocFeroce.jpeg" alt="" id="enemySprite">
+            <p>Points de vie : </p>
+            <p id="enemyHealth">20 / 20</p>
         </div>
     </div>
+    <div id="energyPoints">
+        <p>Energie restante :</p>
+        <p id="energy">5 / 5</p>
+    </div>
+    <a href="#" id="endTurnCTA">Fin du tour</a>
+    </div>
 
-    <div class="cardNamesList" id="cardList"></div>
-    <script src="cardList.js"></script>
-    <script src="scripts.js"></script>
+    </div>
+    <div id="player-hand"></div>
+
+    <script src="cardList.js">//Inclusion des cartes du jeu </script>
+    <script src="scripts.js">//Inclusion des scripts </script>
+
     <script>
-        for (let card of cards) {
-            console.log(card.name)
-            const newButton = document.createElement('button')
-            newButton.innerText = card.name
-            newButton.addEventListener('mouseenter', function(){
-                nameTag.innerText = card.name;
-                imageTag.src = card.image;
-                costTag.innerText = card.cost;
-                cardTypeTag.style.backgroundColor = typeColor(card.type);
-                contentTag.innerHTML = getContent(card)
-            })
-            cardList.appendChild(newButton)
-        }
 
-        let selectedCharacter = cards[0]
-        
-        let nameTag = document.getElementById('card-name');     //Card name, image and cost
-        let imageTag = document.getElementById('card-image');
-        let costTag = document.getElementById('card-cost');
-        let cardTypeTag = document.getElementById('card-type');
-        nameTag.innerText = selectedCharacter.name;
-        imageTag.src = selectedCharacter.image;
-        costTag.innerText = selectedCharacter.cost;
-
-        cardTypeTag.style.backgroundColor = typeColor(selectedCharacter.type);
-
-        let contentTag = document.getElementById('card-content') //Dynamic card content
-
-        contentTag.innerHTML = getContent(selectedCharacter)
-
-
-    </script>
-
-
+    let playerHand = document.getElementById('player-hand');
+</script>
 </body>
 </html>
+
