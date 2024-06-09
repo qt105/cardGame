@@ -38,4 +38,14 @@
         heal: 20
     }
 
-    const cardList = [croc, bouclier, potionSoin, Elixir]
+    let grognasse = {
+        title: 'La grognasse',
+        cost: 5,
+        illustration: 'grognasse.png',
+        description: 'Inflige 35 points de dégâts',
+        dmg: 35,
+        shield: 0,
+        heal: 0
+    } 
+
+    const cardList = [croc, bouclier, potionSoin, Elixir, grognasse]

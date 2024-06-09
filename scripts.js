@@ -27,7 +27,7 @@ function addNewCardToHand(card) {
 }
 function onCardClick(card, cardElement) {
     console.log(`Carte cliquée: ${card.title}`);
-    if (playerTurn & mana > card.cost) {
+    if (playerTurn & mana >= card.cost) {
         deductPlayerMana(card.cost)
         console.log(mana)
         cardElement.remove();
