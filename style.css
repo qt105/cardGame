@@ -13,11 +13,11 @@ body {
 }
 
 #playerSprite {
-    height: 200px;
+    height: 10vh;
 }
 
 #enemySprite {
-    height: 200px;
+    height: 10vh;
 }
 
 #display{
