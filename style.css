@@ -7,6 +7,14 @@ body {
     margin: 0;
 }
 
+#playerSprite {
+    height: 300px;
+}
+
+#enemySprite {
+    height: 300px;
+}
+
 #display{
     padding: 80px;
     display: flex;
